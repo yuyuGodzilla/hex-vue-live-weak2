@@ -11,6 +11,15 @@
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
     <link rel="stylesheet" href="./css/product.css">
+    <script>
+        // 防止繞過登入畫面，直接輸入url (/product.html)
+        let hexToken = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+        if (!hexToken) {
+            alert("請重新登入");
+            document.location.href = "./index.html";
+        }
+    </script>
 </head>
 
 <body>
