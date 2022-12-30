@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="./css/product.css">
     <script>
         // 防止繞過登入畫面，直接輸入url (/product.html)
-        let hexToken = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+        let checkToken = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 
-        if (!hexToken) {
+        if (!checkToken) {
             alert("請重新登入");
             document.location.href = "./index.html";
         }
